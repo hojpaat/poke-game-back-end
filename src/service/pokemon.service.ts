@@ -57,7 +57,7 @@ export const createQuestion = () => {
             question.setpokeminImage(currentPokemon.getImage());
         }
         // adding answer options
-        answers[i] = currentPokemon.getName();
+        answers.push(currentPokemon.getName());
         i++;
     }
     question.setAnswers(answers);
