@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import express, { Application } from 'express';
 import { pageRouter } from './router/page.router';
+import { DEFAULT_PORT } from './constants/enviroment';
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(cors());
 
 app.use("/", pageRouter)
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || DEFAULT_PORT , () => {
     console.log("Server is listening on port: " + 8080);
 });
 
