@@ -4,9 +4,7 @@ import * as pokemonService from "../service/pokemon.service";
 
 export class MainController {
 
-    constructor() {
-
-    }
+    constructor() {}
 
     public test(req: Request, res: Response) {
         return res.send("OK");

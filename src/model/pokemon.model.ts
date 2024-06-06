@@ -1,7 +1,7 @@
 export class Pokemon {
-    id: number;
-    name: string;
-    image: string;
+    private id: number;
+    private name: string;
+    private image: string;
 
     constructor(id: number, name: string, image: string) {
         this.id = id;

@@ -1,7 +1,7 @@
 
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import express, { Application } from 'express';
+import express from 'express';
 import { pageRouter } from './router/page.router';
 import { DEFAULT_PORT } from './constants/enviroment';
 
@@ -16,13 +16,3 @@ app.use("/", pageRouter)
 app.listen( PORT , () => {
     console.log("Server is listening on port: " + 8080);
 });
-
-// class App {
-//     public app: Application;
-//     public router: PageRouter;
-
-//     constructor() {
-//         this.app = express();
-//         this.router = new PageRouter(this.app);
-//     }
-// }

@@ -11,6 +11,7 @@ let pokemonList: Pokemon[] = [];
 export const works = () => {
 }
 
+// putting together Pokemon list
 export const getPokemons = async () => {
     let pokemons: Pokemon[] = [];
         for (let i: number = 1; i < 51; i++) {
@@ -28,6 +29,7 @@ export const getById = (id: string) => {
     return http.get(id);
 }
 
+// shuffle given array
 export const shuffleArray = (array: any[]) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j: number = Math.floor(Math.random() * (i + 1)); 
