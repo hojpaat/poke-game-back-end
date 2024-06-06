@@ -28,10 +28,10 @@ export const getById = (id: string) => {
     return http.get(id);
 }
 
-export const shufflePokemons = (pokemons: Pokemon[]) => {
-    for (let i: number = 0; i < pokemons.length; i++) {
-        const j: number = Math.floor(Math.random() * pokemons.length) + 1;
-        [pokemons[i], pokemons[j]] = [pokemons[j], pokemons[i]];
+export const shuffleArray = (array: any[]) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j: number = Math.floor(Math.random() * (i + 1)); 
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
 
@@ -40,7 +40,7 @@ export const createQuestion = () => {
     let question = new Question();
     let answers: string[] = [];
     // randomize pokemon array
-    shufflePokemons(pokemonList);
+    shuffleArray(pokemonList);
     // get a random index
     const index = Math.floor(Math.random() * (pokemonList.length - 3));
     let i = 0;
@@ -55,11 +55,14 @@ export const createQuestion = () => {
         if ( answers.length == 0) {
             question.setPokemonId(currentPokemon.getId());
             question.setpokeminImage(currentPokemon.getImage());
+            question.setCorrectAnswer(currentPokemon.getName());
         }
         // adding answer options
+        shuffleArray(answers);
         answers.push(currentPokemon.getName());
         i++;
     }
+    
     question.setAnswers(answers);
     return question;
 }

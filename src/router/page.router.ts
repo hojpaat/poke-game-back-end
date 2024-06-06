@@ -8,5 +8,3 @@ pageRouter.get("/test", controller.test);
 pageRouter.get("/all", controller.getAllPokemons);
 
 pageRouter.get("/question", controller.getQuestion);
-
-pageRouter.get("/checkAnswer", controller.checkAnswer);
